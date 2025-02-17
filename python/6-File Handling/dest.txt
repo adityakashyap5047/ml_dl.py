@@ -1,0 +1,7 @@
+Hello World!
+I written this content using file handling in python
+Heyy I am appending this line using the 'a' mode in pythonHeyy I am appending this line using the 'a' mode in python
+I am appending the bellow content from a list 
+first line 
+second line 
+third line 
