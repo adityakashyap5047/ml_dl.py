@@ -1,0 +1,5 @@
+2025-02-22 01:50:05-ArithmeicApp-DEBUG-Adding 10 + 5 = 15
+2025-02-22 01:50:05-ArithmeicApp-DEBUG-Substracting 10 - 5 = 5 
+2025-02-22 01:50:05-ArithmeicApp-DEBUG-Multiplying 10 * 5 = 50 
+2025-02-22 01:50:05-ArithmeicApp-DEBUG-Dividing 10 / 5 = 2.0 
+2025-02-22 01:50:05-ArithmeicApp-ERROR-Division by zero error
