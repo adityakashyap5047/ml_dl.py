@@ -23,7 +23,19 @@ def submit():
 # Variable rule
 @app.route('/success/<int:score>')
 def success(score):
-    return f"The marks you got is {score}"
+    if score >= 50:
+        res = 'PASSED'
+    else:
+        res = 'FailED'
+
+    return render_template('jinja.html', results=res)
+
+###Jinja2 Template Engine
+'''
+{{  }} expressions to print output in html
+{% ... %} conditions, for loops
+{# ... #} this is for comments
+'''
 
 if __name__=="__main__":
     app.run(debug=True)
