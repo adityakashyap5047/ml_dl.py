@@ -2,7 +2,7 @@
 ### Variable Rule
 ### Jinja 2 Template Engine
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request, url_for, redirect
 
 app = Flask(__name__)
 
@@ -39,7 +39,7 @@ def success(score):
 '''
 
 @app.route('/eva/<int:score>')
-def evaluate(score):
+def ev(score):
     res = ''
     if score >= 50:
         res = 'PASSED'
@@ -49,6 +49,21 @@ def evaluate(score):
     exp = {'score': score, 'res': res}
 
     return render_template('result.html', exp=exp)
+
+@app.route('/submitres', methods=['GET', 'POST'])
+def submitres():
+    score = 0
+    if request.method == 'POST':
+        science = float(request.form['science'])
+        maths = float(request.form['maths'])
+        c = float(request.form['c'])
+        datascience = float(request.form['datascience'])
+
+        score = (science + maths + c + datascience) / 4
+    else:
+        return render_template('getresult.html')
+    
+    return redirect(url_for('ev', score=score))
 
 if __name__=="__main__":
     app.run(debug=True)
