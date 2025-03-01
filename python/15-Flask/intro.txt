@@ -1,0 +1,16 @@
+Flask Framework
+
+Working ---->
+
+1. WSGI -> Web Server Gateway Interface
+2. Jinja2 -> Template engine
+
+Flask -> Web Framework which is created with the pyhton programming language
+
+    WSGI -> To communicate between web App(Flask) and Web Server(where the web app is deployed such as AWs, Azure) we use a protocol which is WSGI protocol
+
+Jinja2 -> Web Template engine
+
+    it combines the web Template(pages of our website) with a data source ( SQL Data, CSV Sheet, ML Model, MongoDB)
+
+    We combine the layout of page with data source to create dynamic web pages
