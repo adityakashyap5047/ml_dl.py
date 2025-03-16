@@ -16,7 +16,16 @@ def index():
     if request.method == 'GET':
         return render_template('index.html') 
     if request.method == 'POST':
-        return "Hello"
+        Temperature = request.form['Temperature']
+        RH = request.form['RH']
+        Ws = request.form['Ws']
+        Rain = request.form['Rain']
+        FFMC = request.form['FFMC']
+        DMC = request.form['DMC']
+        ISI = request.form['ISI']
+        Classes = request.form['Classes']
+        Region = request.form['Region']
+        return Temperature
 
 
 if __name__=="__main__":
