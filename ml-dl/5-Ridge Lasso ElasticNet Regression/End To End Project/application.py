@@ -11,10 +11,13 @@ app = application
 ridge = pickle.load(open('models/ridge.pkl', 'rb'))
 scaler = pickle.load(open('models/scaler.pkl', 'rb'))
 
-@app.route("/")
-def hello_world():
-    return "Hello World"
+@app.route("/", methods=['GET', 'POST'])
+def index():
+    if request.method == 'GET':
+        return render_template('index.html') 
+    if request.method == 'POST':
+        return "Hello"
 
 
 if __name__=="__main__":
-    app.run(host="0.0.0.0")
+    app.run(host="0.0.0.0", debug=True)
