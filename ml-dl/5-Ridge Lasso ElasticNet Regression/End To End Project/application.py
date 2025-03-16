@@ -25,8 +25,11 @@ def index():
         ISI = request.form['ISI']
         Classes = request.form['Classes']
         Region = request.form['Region']
-        return Temperature
+        
+        scaled_data = scaler.transform([[Temperature, RH, Ws, Rain, FFMC, DMC, ISI, Classes, Region]])
+        result = ridge.predict(scaled_data)
 
+        return render_template('index.html', results=result[0])
 
 if __name__=="__main__":
-    app.run(host="0.0.0.0", debug=True)
+    app.run(host="0.0.0.0") 
